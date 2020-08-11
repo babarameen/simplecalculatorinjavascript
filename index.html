@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<style>
+    #s-res{
+        border: 1px solid black;
+        width: 30vh;
+        background-color: cornsilk;
+    }
+    body{
+        background-color: gray;
+        text-align: center;
+    }
+    #s-res{
+        margin: auto;
+        opacity: 0;
+    }
+    input{
+        height: 5vh;
+        width: 40vh;
+        margin-bottom: 10px;
+    }
+</style>
+<body>
+    <h1>Calculator</h1>
+    <input type="text" placeholder="enter first number" id="num1" value="12"><br>
+    <input type="text" placeholder="enter operator" id="op" value="+" placeholder="+,-,*,/"><br>
+    <input type="text" placeholder="enter second number" id="num2" value="12"><br>
+    <button id="res" onclick="res()">Result</button>
+    <div id="s-res"></div>
+</body>
+<script>
+    function res(){
+        var num1=Number(document.getElementById("num1").value);
+        var num2=Number(document.getElementById("num2").value);
+        var op=document.getElementById("op").value;
+        document.getElementById("s-res").style.opacity="1";
+        switch(op){
+            case "+":
+                var res=num1+num2;
+                document.getElementById("s-res").innerHTML=`${res}`;
+                break;
+            case "-":
+                var res=num1-num2;
+                document.getElementById("s-res").innerHTML=`${res}`;
+                break;
+            case "*":
+                var res=num1*num2;
+                document.getElementById("s-res").innerHTML=`${res}`;
+                break;
+            case "/":
+                var res=num1/num2;
+                document.getElementById("s-res").innerHTML=`${res}`;
+                break;
+            default:
+            document.getElementById("s-res").innerHTML=`Wrong`;
+
+        }
+        
+        console.log(document.getElementById("op").value);
+    }
+</script>
+</html>
